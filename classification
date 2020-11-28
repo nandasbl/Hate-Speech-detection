@@ -1,0 +1,147 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMiBEKrMYEbbWw2cQXzqY2X",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/nandasbl/Hate-Speech-detection/blob/main/classification\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xpaZtT2s-CSH",
+        "outputId": "9934c1e1-991d-477c-f54c-5ce44e0008ea"
+      },
+      "source": [
+        "import pandas as panda\n",
+        "from nltk.tokenize import word_tokenize\n",
+        "from nltk.corpus import stopwords\n",
+        "from nltk.stem.porter import *\n",
+        "import string\n",
+        "import nltk\n",
+        "nltk.download('punkt')\n",
+        "nltk.download('wordnet')\n",
+        "from sklearn.feature_extraction.text import CountVectorizer\n",
+        "from sklearn.feature_extraction.text import TfidfVectorizer\n",
+        "from sklearn.metrics import confusion_matrix\n",
+        "import seaborn\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.metrics import f1_score\n",
+        "from sklearn.feature_selection import SelectFromModel\n",
+        "from sklearn.metrics import classification_report\n",
+        "from sklearn.metrics import accuracy_score\n",
+        "from sklearn.svm import LinearSVC\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.naive_bayes import GaussianNB\n",
+        "import numpy as np\n",
+        "from nltk.sentiment.vader import SentimentIntensityAnalyzer as VS\n",
+        "import warnings\n",
+        "warnings.simplefilter(action='ignore', category=FutureWarning)\n",
+        "%matplotlib inline"
+      ],
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[nltk_data] Downloading package punkt to /root/nltk_data...\n",
+            "[nltk_data]   Package punkt is already up-to-date!\n",
+            "[nltk_data] Downloading package wordnet to /root/nltk_data...\n",
+            "[nltk_data]   Package wordnet is already up-to-date!\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ilZusCEcFCGn",
+        "outputId": "f8fd9ab1-6e7c-4e11-9d31-0f274a509c9a"
+      },
+      "source": [
+        "pip install sastrawi"
+      ],
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Requirement already satisfied: sastrawi in /usr/local/lib/python3.6/dist-packages (1.0.1)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Z2l6ZNLfC74Z"
+      },
+      "source": [
+        "from Sastrawi.Stemmer.StemmerFactory import StemmerFactory"
+      ],
+      "execution_count": 23,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "9oH1K4eRM1-k"
+      },
+      "source": [
+        "factory = StemmerFactory()\n",
+        "stemmer = factory.create_stemmer()"
+      ],
+      "execution_count": 24,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "k7qKFQXpM7nY"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rKSq4O03Mivu"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
